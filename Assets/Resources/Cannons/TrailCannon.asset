@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c99ef8ff5b47a2e44b7d3228769e58c5, type: 3}
+  m_Name: TrailCannon
+  m_EditorClassIdentifier: 
+  CannonPrefab: {fileID: 7309478970159132960, guid: 745b7435192d75844ac4776655a94271,
+    type: 3}
+  Damage: 0
+  Cooldown: 1
+  BulletSpeed: 1000

@@ -25,9 +25,9 @@ public class CannonHolder : MonoBehaviour
             var cannon = Instantiate(cannonsSetting.CannonPrefab, _cannonsHolderTransform);
 
             cannon.SetActive(false);
-            
+
             var controller = cannon.GetComponent<CannonController>();
-            
+
             controller.Init(cannonsSetting);
             _cannonsControllers.Add(controller);
         }
@@ -53,6 +53,8 @@ public class CannonHolder : MonoBehaviour
 
     private void SwitchCannonForward()
     {
+        _activeCannon.gameObject.SetActive(false);
+
         _currentCannonIndex++;
 
         if (_currentCannonIndex > _cannonsControllers.Count - 1)
@@ -61,16 +63,20 @@ public class CannonHolder : MonoBehaviour
         }
 
         _activeCannon = _cannonsControllers[_currentCannonIndex];
+        _activeCannon.gameObject.SetActive(true);
     }
 
     private void SwitchCannonBackward()
     {
+        _activeCannon.gameObject.SetActive(false);
         _currentCannonIndex--;
+
         if (_currentCannonIndex < 0)
         {
             _currentCannonIndex = _cannonsControllers.Count - 1;
         }
 
         _activeCannon = _cannonsControllers[_currentCannonIndex];
+        _activeCannon.gameObject.SetActive(true);
     }
 }

@@ -4,15 +4,33 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private int _damage;
+    private float _speed;
+    private Rigidbody _rigidbody;
+    private Vector3 _direction;
+    
+    public void Init(int damage, float speed, Vector3 direction)
     {
-        
+        _damage = damage;
+        _speed = speed;
+        _direction = direction;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        _rigidbody = GetComponent<Rigidbody>();
+    }
+
+    private void Start()
+    {
+        _rigidbody.AddForce(_direction * _speed);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            //other.TakeDamage(_damage);
+        }
     }
 }

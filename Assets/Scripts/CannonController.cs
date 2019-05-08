@@ -9,26 +9,24 @@ public class CannonController : MonoBehaviour
 
     private int _damage;
     private float _bulletSpeed;
-    private float _fireRate;
+    private float _cooldown;
 
-    public float FireRate
-    {
-        get { return _fireRate; }
-    }
+    public float Cooldown => _cooldown;
 
     public void Init(CannonSetting setting)
     {
         _damage = setting.Damage;
         _bulletSpeed = setting.BulletSpeed;
-        _fireRate = setting.FireRate;
+        _cooldown = setting.Cooldown;
     }
 
-    public void Fire()
+    public void Shoot()
     {
         foreach (var spawnPoint in _spawnPoints)
         {
-            var bullet = Instantiate(_bullet, spawnPoint);
-            
+            var bullet = Instantiate(_bullet, spawnPoint.position, Quaternion.identity).GetComponent<Bullet>();
+
+            bullet.Init(_damage, _bulletSpeed, -spawnPoint.right);
         }
     }
 }
