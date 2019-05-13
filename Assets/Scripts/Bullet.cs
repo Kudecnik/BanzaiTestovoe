@@ -24,13 +24,16 @@ public class Bullet : MonoBehaviour
     private void Start()
     {
         _rigidbody.AddForce(_direction * _speed);
+        
+        Destroy(gameObject,3f);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            //other.TakeDamage(_damage);
+            other.GetComponent<EnemyController>().TakeDamage(_damage);
+            Destroy(gameObject);
         }
     }
 }

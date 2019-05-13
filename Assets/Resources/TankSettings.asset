@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c99ef8ff5b47a2e44b7d3228769e58c5, type: 3}
-  m_Name: TrailCannon
+  m_Script: {fileID: 11500000, guid: 800c209763818b447817e756ea47f706, type: 3}
+  m_Name: TankSettings
   m_EditorClassIdentifier: 
-  CannonPrefab: {fileID: 7309478970159132960, guid: 745b7435192d75844ac4776655a94271,
-    type: 3}
-  Damage: 5
-  Cooldown: 1
-  BulletSpeed: 1000
+  MaxHealth: 100
+  Speed: 5
+  RotationSpeed: 3
+  Defence: 30

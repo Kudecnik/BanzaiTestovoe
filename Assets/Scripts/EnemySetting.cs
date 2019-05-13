@@ -7,4 +7,5 @@ public class EnemySetting : ScriptableObject
     public int MaxHealth;
     public float Speed;
     public int Damage;
+    public int Defence;
 }
